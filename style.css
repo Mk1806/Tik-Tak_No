@@ -11,15 +11,12 @@ body {
     width: 100vw;
     height: 100vw;
     display: grid;
-    justify-content: center;
-    align-content: center;
+    justify-content:center;
+    align-items: center;
+    
     background: linear-gradient(60deg, #16213E, #61A4BC, #FE7E60, #E94560);
     background-size: 500%;
     animation: gradientAnimation 5s ease infinite;
-    padding: 0;
-    margin: 0;
-    text-align: center;
-    font-family: 'Roboto', arial;
 }
 
 @keyframes gradientAnimation {
@@ -34,15 +31,13 @@ body {
     }
 }
 
-
-
 .board  {
-    width: 100vw;
-    height: 100vw;
+    width: 50vw;
+    height: 50vw;
     display: grid;
     justify-content: center;
     align-content: center;
-    justify-items: center;
+    justify-content: center;
     align-items: center;
     grid-template-columns: repeat(3, auto);
 }
