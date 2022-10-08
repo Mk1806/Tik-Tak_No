@@ -33,20 +33,26 @@ function handleClick(e) {
     if (checkWin(currentClass)){
         console.log('winner')
         endGame(false)
-    }
-    //Check For Win
-    //Check For Draw
-    //Switch Turns 
+    } else if (isDraw()){
+        endGame(true)
+    } else {
     swapTurns()
     setBoardHoverClass()
+    }
 }
 function endGame(draw) {
     if (draw) {
-
+        winningMessageTextElement.innerText = 'Draw!'
     } else {
       winningMessageTextElement.innerText = `${circleTurn ? "O'" : "X"} Wins!`
     }
     winningMessageElement.classList.add('show')
+}
+
+function isDraw(){
+    return [...cellElements].every(cell => {
+        return cell.classList.contains(X_CLASS) || cell.classList.contains(CIRCLE_CLASS)
+    })
 }
 
 function placeMark(cell, currentClass) {
